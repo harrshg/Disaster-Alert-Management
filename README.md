@@ -16,7 +16,7 @@ Build a service that can run on devices, edge servers, or cloud servers to conti
 
 ## Current Status
 
-Task 1 scaffold only. This branch should be used as the initial `master` / `main` baseline.
+Task 2 backend API foundation is implemented. This includes a FastAPI service with health checks, safe config summary, and placeholder service status endpoints.
 
 ## Planned Components
 
@@ -31,9 +31,22 @@ Task 1 scaffold only. This branch should be used as the initial `master` / `main
 
 ## Quick Start
 
-Implementation will be added incrementally through separate pull requests.
+Copy `.env.example` to `.env` when starting local development.
 
-For now, copy `.env.example` to `.env` when starting local development.
+```powershell
+copy .env.example .env
+```
+
+Install and run the API service.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r apps/api/requirements.txt
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 --app-dir apps/api
+```
+
+Open API docs at `http://localhost:8000/docs`.
 
 ## Safety Note
 
