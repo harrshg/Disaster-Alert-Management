@@ -37,3 +37,9 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 --app-dir apps/api
 - `GET /api/v1/health` - versioned health check.
 - `GET /api/v1/config` - safe runtime configuration summary.
 - `GET /api/v1/status` - placeholder service readiness status.
+- `GET /api/v1/data-sources/status` - data source connector status.
+- `GET /api/v1/data-sources/open-meteo/forecast` - weather forecast from Open-Meteo.
+- `GET /api/v1/data-sources/usgs/earthquakes` - recent earthquake events from USGS.
+- `GET /api/v1/data-sources/nasa-power/climate/daily` - daily climate history from NASA POWER.
+- `GET /api/v1/data-sources/openstreetmap/geocode` - place geocoding from OpenStreetMap Nominatim.
+- `GET /api/v1/data-sources/openstreetmap/reverse` - reverse geocoding from OpenStreetMap Nominatim.

@@ -16,7 +16,7 @@ Build a service that can run on devices, edge servers, or cloud servers to conti
 
 ## Current Status
 
-Task 2 backend API foundation is implemented. This includes a FastAPI service with health checks, safe config summary, and placeholder service status endpoints.
+Task 3 data source connectors are implemented. This includes the FastAPI foundation plus connector endpoints for Open-Meteo, USGS Earthquake, NASA POWER, and OpenStreetMap Nominatim.
 
 ## Planned Components
 
