@@ -1,11 +1,13 @@
 from fastapi import APIRouter, Depends
 
 from app.api.v1.data_sources import router as data_sources_router
+from app.api.v1.schemas import router as schemas_router
 from app.core.config import Settings, get_settings
 from app.schemas.health import ConfigSummaryResponse, HealthResponse, ServiceStatusResponse
 
 router = APIRouter(prefix="/api/v1")
 router.include_router(data_sources_router)
+router.include_router(schemas_router)
 
 
 @router.get("/health", response_model=HealthResponse, tags=["health"])
@@ -41,7 +43,7 @@ def config_summary(settings: Settings = Depends(get_settings)) -> ConfigSummaryR
 def service_status() -> ServiceStatusResponse:
     return ServiceStatusResponse(
         api="ready",
-        ingestion="connectors_ready",
+        ingestion="schemas_ready",
         ml="not_implemented",
         alerting="not_implemented",
         bot="not_implemented",

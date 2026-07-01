@@ -43,3 +43,5 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 --app-dir apps/api
 - `GET /api/v1/data-sources/nasa-power/climate/daily` - daily climate history from NASA POWER.
 - `GET /api/v1/data-sources/openstreetmap/geocode` - place geocoding from OpenStreetMap Nominatim.
 - `GET /api/v1/data-sources/openstreetmap/reverse` - reverse geocoding from OpenStreetMap Nominatim.
+- `GET /api/v1/schemas/metadata` - normalized schema names and enum values.
+- `GET /api/v1/schemas/example` - complete normalized disaster record example.

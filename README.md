@@ -16,7 +16,7 @@ Build a service that can run on devices, edge servers, or cloud servers to conti
 
 ## Current Status
 
-Task 3 data source connectors are implemented. This includes the FastAPI foundation plus connector endpoints for Open-Meteo, USGS Earthquake, NASA POWER, and OpenStreetMap Nominatim.
+Task 4 shared data schemas are implemented. This includes the FastAPI foundation, public data source connectors, and normalized schemas for locations, observations, forecasts, hazards, risk scores, alerts, and travel plans.
 
 ## Planned Components
 
