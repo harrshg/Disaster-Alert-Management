@@ -45,3 +45,6 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 --app-dir apps/api
 - `GET /api/v1/data-sources/openstreetmap/reverse` - reverse geocoding from OpenStreetMap Nominatim.
 - `GET /api/v1/schemas/metadata` - normalized schema names and enum values.
 - `GET /api/v1/schemas/example` - complete normalized disaster record example.
+- `POST /api/v1/mvp/risk/assess` - run live public-data risk assessment for a location.
+- `POST /api/v1/mvp/travel/assess` - assess a natural-language travel plan.
+- `POST /api/v1/mvp/alerts/preview` - generate alert previews and SMS-readiness status.

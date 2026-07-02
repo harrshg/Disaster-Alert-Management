@@ -1,6 +1,6 @@
 # Disaster Alert Management
 
-AI-assisted disaster monitoring and alerting platform.
+AI-assisted disaster monitoring, risk assessment, travel safety, and alert-preview platform.
 
 ## Goal
 
@@ -16,18 +16,15 @@ Build a service that can run on devices, edge servers, or cloud servers to conti
 
 ## Current Status
 
-Task 4 shared data schemas are implemented. This includes the FastAPI foundation, public data source connectors, and normalized schemas for locations, observations, forecasts, hazards, risk scores, alerts, and travel plans.
+Runnable MVP is implemented. The backend can fetch free public disaster-related data, normalize schemas, calculate rule-based risk scores, assess natural-language travel plans, and create alert previews.
 
-## Planned Components
+## Implemented Components
 
-- `apps/api` - backend API service.
-- `apps/web` - web dashboard.
-- `apps/bot` - natural-language assistant service.
-- `services/ingestion` - data ingestion workers.
-- `services/ml` - analytics and ML prediction services.
-- `services/alerting` - SMS and notification service.
-- `packages/shared` - shared schemas, types, and utilities.
-- `docs` - planning, architecture, API, and task documents.
+- `apps/api` - FastAPI backend service.
+- `apps/api/app/connectors` - Open-Meteo, USGS, NASA POWER, and OpenStreetMap connectors.
+- `apps/api/app/schemas` - normalized disaster data schemas.
+- `apps/api/app/services` - risk assessment, travel bot, and alert-preview services.
+- `docs` - architecture, connector, schema, and runbook documentation.
 
 ## Quick Start
 
@@ -47,6 +44,16 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 --app-dir apps/api
 ```
 
 Open API docs at `http://localhost:8000/docs`.
+
+See `docs/RUNBOOK.md` for endpoint examples.
+
+## Main MVP Endpoints
+
+- `GET /api/v1/status`
+- `GET /api/v1/data-sources/status`
+- `POST /api/v1/mvp/risk/assess`
+- `POST /api/v1/mvp/travel/assess`
+- `POST /api/v1/mvp/alerts/preview`
 
 ## Safety Note
 
